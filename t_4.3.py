@@ -1,7 +1,7 @@
 def file_processing(text: str, filename: str):
     with (open(filename, "a", encoding="utf-8") as file1,
           open(filename, "r", encoding="utf-8") as file2):
-        file1.write(text) if file2.read() == '' else file1.write(f"\n{text}")
+        file1.write(text) if not(file2.read()) else file1.write(f"\n{text}")
 
     with open(filename, "r", encoding="utf-8") as file:
         lines = file.readlines()
